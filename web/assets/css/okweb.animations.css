@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+input,
+button,
+.navigation ul li a,
+.select select,
+textarea,
+a,
+.loadingCard,
+.dialog{
+	/* Chrome, Safari */
+	-webkit-transition-property: all;
+	-webkit-transition-duration: 100ms;
+	-webkit-transition-timing-function: ease-in-out;
+	/* Firefox */
+	-moz-transition-property: all;
+	-moz-transition-duration: 100ms;
+	-moz-transition-timing-function: ease-in-out;
+	/* Standard syntax */
+	transition-property: all;
+	transition-duration: 100ms;
+	transition-timing-function: ease-in-out;
+}
+.dialog,
+.loadingCard{
+	/* Chrome, Safari */
+	-webkit-transition-duration: 300ms;
+	/* Firefox */
+	-moz-transition-duration: 300ms;
+	/* Standard syntax */
+	transition-duration: 300ms;
+}

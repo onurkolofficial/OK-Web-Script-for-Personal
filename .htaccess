@@ -1,0 +1,49 @@
+# Set Timezone
+php_value date.timezone Europe/Istanbul
+
+# Rewrite Engine
+RewriteEngine On
+RewriteBase /
+
+DirectorySlash Off
+
+# Forbiddens Url
+Options -Indexes
+
+# Allow For Downloads and File Extensions
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteCond %{REQUEST_URI} .(zip|msi|jpg|png|css|js|ico)$
+RewriteRule ^(.*)$ /web/$1 [R,L]
+
+# System Rewrite Rules
+##################################
+# Redirect '/' to root folder('/web').
+RewriteRule ^$ /web/ [L]
+
+# Language Rewrite
+RewriteRule ^([a-z]{2})$ /web/?lang=$1 [L,QSA]
+RewriteRule ^(.*)/([a-z]{2})$ /web/$1/?lang=$2 [L,QSA]
+
+# App Category Rewrite
+RewriteRule ^apps/(.*)/(.*)$ /web/apps/app-detail/?cat=$1&app=$2 [L,NC,QSA]
+RewriteRule ^apps/(.*)$ /web/apps/app-list/?cat=$1 [L,NC,QSA]
+
+# Announcements Rewrite
+RewriteRule ^announcements/(.*)$ /web/announcements/announce-detail/?id=$1 [L,NC,QSA]
+
+## For Control Panel
+# Mail Detail Rewrite
+RewriteRule ^admin/mails/(.*)$ /web/admin/mails/mail-detail/?id=$1 [L,NC,QSA]
+
+# Search Rewrite
+RewriteRule ^search/(.*)/(.*)$ /web/search/?c=$1&q=$2 [L,NC,QSA]
+RewriteRule ^search/(.*)$ /web/search/?c=announcements&q=$1 [L,NC,QSA]
+
+# Redirect '/*' to '/web/*'
+RewriteCond %{REQUEST_URI} !^/web/
+RewriteRule ^(.*)$ /web/$1/ [L]
+
+# Error Pages
+ErrorDocument 404 /web/404/
+ErrorDocument 403 /web/403/
+

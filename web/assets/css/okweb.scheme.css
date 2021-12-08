@@ -1,0 +1,806 @@
+@charset "utf-8";
+
+/* Reset All Margin/Paddings*/
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Preahvihear';
+}
+
+/* @media: Desktop */
+.pageStartLine {
+	border-left: 10px solid;
+	position: fixed;
+	top:0px;
+	left:0px;
+	height: 100%;
+	overflow: auto;
+}
+
+.navigationContainer{
+	display: flex;
+}
+.navigation{
+	flex: 1;
+	margin-left: 12px;
+	max-width: 220px;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	border-right: 1px solid;
+}
+.navigation::-webkit-scrollbar {
+    display: none;
+}
+.navigation::-moz-scrollbar {
+    display: none;
+}
+.navigation::-ms-scrollbar {
+    display: none;
+}
+.navigation ul{
+	width: 100%;
+}
+.navigation ul li{
+	height: auto;
+	width: 100%;
+}
+.navigation ul li a{
+	display: block;
+	margin: 8px;
+	padding-left: 10px;
+	width: 88%;
+	font-size: 13px;
+	text-decoration: none;
+}
+.navigation ul li .sub{
+	margin: 8px;
+	padding-left: 25px;
+	width: 81.5%;
+}
+.navigation .webVersionText{
+	font-size: 10px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.dialog,
+.loadingCard{
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 380px;
+	height: 140px;
+	/* bring your own prefixes */
+	transform: translate(-50%, -50%);
+	z-index: 9999999;
+	display: none;
+}
+.dialog{
+	/*display: flex;*/
+	flex-direction: column;
+}
+.dialog .dialogBody{
+	display: block;
+	margin: auto;
+	height: auto;
+}
+.dialog .dialogTitle, .loadingCard .loadingTitle{
+	font-family: 'Satisfy';
+	font-size: 26pt;
+	margin-top: 24px;
+}
+.dialog .dialogTitle{
+	margin-top: 5px;
+}
+.dialog .dialogActionButtons{all:unset;}
+
+.logoNsearch{
+	width: 100%;
+	display: flex;
+	margin-top: 20px;
+	flex: 1;
+	margin-left: 250px;
+}
+.logoNsearch .logoText{
+	width: inherit;
+}
+.logoNsearch .logoText .logo{
+	font-family: 'Satisfy';
+	font-size: 46pt
+}
+.logoNsearch .logoText p{
+	font-size: 16px;
+}
+.logoNsearch .logoSearch{
+	height: 100%;
+	margin-right: 12px;
+	display: flex;
+	align-items: center;
+}
+.logoNsearch .logoSearch input{
+	vertical-align: middle;
+}
+
+.pageContent{
+	margin-top: 15px;
+	margin-left: 250px;
+	line-height: 20px;
+	width: calc(100% - 264px);
+	height: auto;
+}
+
+.latestAnnouncement{
+	position: relative;
+	margin-top: 20px;
+	bottom: 0;
+	width: calc(100% - 10px);
+}
+.latestAnnouncement .announceTitle{
+	margin-bottom: 5px;
+	font-size:16px;
+}
+.latestAnnouncement .announceContent,
+.announceAuthor,
+.announceDate{
+	font-size:12px;
+}
+.latestAnnouncement .announceAuthor,
+.latestAnnouncement .announceDate{
+	display: inline-block;
+}
+.latestAnnouncement .announceDate{
+	float: right;
+}
+
+.errorCodeContent{
+	margin-top: 180px;
+	text-align: center;
+}
+.errorCodeContent .errorCodeTitle{
+	font-family: 'Satisfy';
+	font-size:72pt;
+}
+.errorCodeContent .errorCodeName{
+	margin-top: 40px;
+	font-size: 16pt;
+}
+.errorCodeContent .errorCodeMessage{
+	margin-top: 60px;
+}
+
+.formContent{
+	width: 100%;
+}
+.formContent .form-note{
+	margin-top: 20px;
+	margin-bottom: 40px;
+	font-size: 11pt;
+}
+.formContent form{
+	margin-left: 10px;
+}
+.formContent form div{
+	width: 100%;
+	text-align: center;
+	margin-bottom: 22px;
+}
+.formContent form div label{
+	display: inline-block;
+	margin-right: 8%;
+	text-align: left;
+	width: 19%;
+}
+.formContent form div input,
+.formContent form div textarea{
+	margin-right: 15%;
+	width: 35%;
+}
+.formContent form .form-buttons{
+	margin-top: 40px;
+	display: block;
+}
+.formContent form .form-buttons input,
+button{
+	margin: 0;
+	margin-left: 5px;
+	width: 20%;
+}
+
+.appContent .appNavigation{
+	display: inline-flex;
+	margin-top: 40px;
+	width: 100%;
+}
+.appContent .appNavigation img{
+	width: 100px;
+	height: 100px;
+}
+.appContent .appNavigation .appInfo{
+	margin-left: 20px;
+	margin-top: 10px;
+}
+.appContent .appNavigation .appInfo .appName{
+	font-size: 18px;
+}
+.appContent .appNavigation .appInfo .appVersion{
+	font-size: 10px;
+}
+.appContent .appNavigation .appInfo .appAuthor{
+	margin-top: 15px;
+}
+.appContent .appButtons{
+	margin-top: 20px;
+}
+.appContent .appButtons div{
+	margin-top: 15px;
+}
+
+.searchContent{
+	margin-top: 30px;
+}
+.searchContent .categoryNavigation{
+	margin-top: 10px;
+	padding-bottom: 10px;
+	max-height: 65px;
+	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.searchContent .categoryNavigation a{
+	margin-right: 10px;
+}
+.searchContent .searchResult{
+	margin-top: 20px;
+	width: 100%;
+}
+.searchContent .searchResult .resultBody{
+	margin-top: 20px;
+}
+
+.homeContent{
+	margin-top: 60px;
+	margin-bottom: 60px;
+	text-align: center;
+}
+.homeContent .welcome-title{
+	font-family: 'Satisfy';
+	font-size: 52pt;
+}
+.homeContent .welcome-title-small{
+	margin-top: 25px;
+	font-size: 13pt;
+}
+
+.setupContent{
+	margin-left: 25px;
+	width: auto;
+	height: auto;
+}
+.setupHomeContent{
+	margin-top: 70px;
+}
+.setupHomeContent .setup-title{
+	font-family: 'Satisfy';
+	font-size: 40pt;
+	text-align: center;
+}
+.setupHomeContent .setup-title-small{
+	margin-top: 10px;
+	text-align: center;
+	font-size: 15pt;
+}
+
+/* Elements */
+.btn-nocorner{
+	border-radius: 0px;
+}
+.btn-icon{
+	width: auto;
+}
+.btn-icon span{
+	font-size:16px;
+	padding: 0;
+	vertical-align: top;
+}
+
+input,
+button,
+.select select,
+textarea{
+	border-radius: 20px;
+	border: none;
+	height: 34px;
+	width: auto;
+	font-size:12px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+	outline: none;
+}
+
+textarea{
+	height: 80px;
+	resize: none;
+}
+
+hr{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: none;
+	border-bottom: 1px solid;
+}
+
+.select {
+	display: contents;
+	position: absolute;
+}
+.select select {
+	background: transparent;
+	-webkit-appearance: none;
+	appearance: none;
+	outline: none;
+	width: 35%;
+}
+.select::after {
+	margin-right: 15%;
+	content: "undo";
+	font-family: 'Material Icons';
+	position: relative;
+	top: 6px;
+	right: 40px;
+	font-size: 24px;
+	line-height: 14px;
+	background-color: transparent;
+	pointer-events: none;
+}
+.select select option {
+	padding: 30px;
+	margin: 30px;
+}
+.social-menu-horizontal,
+.social-menu-vertical{
+	margin-top: 20px;
+}
+.social-menu-horizontal a{
+	display: inline-block;
+	padding: 5px 10px 5px 10px;
+	font-size: 13px;
+	text-decoration: none;
+	margin-top: 10px;
+}
+.social-menu-vertical a{
+	display: block;
+	padding: 5px 10px 5px 10px;
+	font-size: 13px;
+	text-decoration: none;
+	margin-top: 10px;
+}
+
+/* Table */
+table {
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	table-layout: fixed;
+}
+table caption {
+	font-size: 1.35em;
+	margin: .5em 0 .75em;
+}
+table tr {
+	border-bottom: 1px solid;
+	padding: .35em;
+}
+table th,
+table td {
+	padding: .58em;
+	text-align: center;
+}
+table th {
+	font-size: .85em;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+}
+.tableActionMenu{
+	display: flex;
+}
+
+/* @media: for Responsive Table (and other) - 0x700 */
+@media screen and (max-width: 700px) {
+	.homeContent .welcome-title{
+		font-size: 42pt;
+	}
+	.homeContent .welcome-title-small{
+		margin-top: 20px;
+		font-size: 10pt;
+	}
+	
+	.setupHomeContent .steup-title{
+		font-size: 28pt;
+	}
+	.setupHomeContent .setup-title-small{
+		margin-top: 14px;
+		font-size: 13pt;
+	}
+	
+	.formContent .form-note{
+		font-size:10pt;
+	}
+	
+	table {
+		border: 0;
+		margin-right: 10px;
+	}
+	table caption {
+		font-size: 1.3em;
+	}
+	table thead {
+		border: none;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	table tr {
+		display: block;
+		margin-bottom: .625em;
+		border-bottom: 3px solid;
+	}
+	table td {
+		display: block;
+		font-size: .8em;
+		text-align: right;
+		border-bottom: 1px solid;
+	}
+	table td::before {
+		content: attr(data-label);
+		float: left;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+	table td:last-child {
+		border-bottom: 0;
+	}
+}
+/* @media: Small - 0x320 */
+@media only screen and (max-width : 320px) {
+	.pageStartLine{
+		border-left: 5px solid;
+	}
+	.navigation{
+		margin-left: 10px;
+		max-width: calc(100% - 14px);
+		max-height: 60px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		border-right: none;
+		border-bottom: 1px solid;
+	}
+	.navigation ul{}
+	.navigation ul li{
+		display: inline;
+	}
+	.navigation ul li a,
+	.navigation ul li .sub{
+		display: inline-block;
+		margin-top: 5px;
+		height: 30px;
+		width: auto;
+		padding-right: 20px;
+		font-size: 12px;
+	}
+	.navigation ul li .sub{
+		font-size: 10px;
+		margin-left: -10px;
+	}
+	.navigation ul li .sub::before{
+		content: "+";
+	}
+	.navigation .webVersionText{
+		font-size: 8px;
+	}
+	
+	.dialog,
+	.loadingCard{
+		width: 100%;
+		height: 100%;
+	}
+	.dialog .dialogTitle,
+	.loadingCard .loadingTitle{
+		margin-top: 48%;
+	}
+	.dialog .dialogActionButtons{
+		margin-bottom:120px;
+	}
+	
+	.logoNsearch{
+		width: 100%;
+		display: block;
+		margin-top: 100px;
+		margin-left: 14px;
+	}
+	.logoNsearch .logoText img{
+		margin-left: 14%;
+		width: 70%;
+	}
+	.logoNsearch .logoText p{
+		text-align: center;
+		font-size: 12px;
+	}
+	.logoNsearch .logoSearch{
+		height: 45%;
+	}
+	.logoNsearch .logoSearch input{
+		width: 100%;
+	}
+	
+	.pageContent{
+		margin-top: 30px;
+		margin-left: 10px;
+		width: auto;
+	}
+	
+	.formContent .form-note{
+		font-size:8pt;
+		text-align: center;
+	}
+	.formContent form div{
+		text-align: left;
+		width: auto;
+	}
+	.formContent form div label{
+		width: auto;
+		font-size: 12px;
+	}
+	.formContent form div input,
+	.formContent form div textarea,
+	.formContent form div select{
+		display: block;
+		width: 80%;
+	}
+	.formContent form .form-buttons input,
+	button,
+	textarea{
+		display: inline;
+		width: 27%;
+	}
+	
+	.social-menu-horizontal a{
+		display: block;
+	}
+	
+	.appContent .appNavigation .appInfo{
+		margin-top: 0;
+	}
+	.appContent .appNavigation img{
+		width: 70px;
+		height: 70px;
+	}
+	.appContent .appNavigation .appInfo .appName{
+		font-size: 14px;
+	}
+	.appContent .appNavigation .appInfo .appAuthor{
+		margin-top: 5px;
+		font-size: 12px;
+	}
+	
+	.setupHomeContent .setup-title{
+		font-size: 19pt;
+	}
+	.setupHomeContent .setup-title-small{
+		margin-top: 10px;
+		font-size: 9pt;
+	}
+}
+/* @media: Smartphones (portrait and landscape) - 321x480 */
+@media only screen and (min-width : 321px) and (max-width : 480px) {
+	.pageStartLine{
+		border-left: 7px solid;
+	}
+	.navigation{
+		margin-left: 11px;
+		max-width: calc(100% - 14px);
+		max-height: 65px;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		white-space: nowrap;
+		border-right: none;
+		border-bottom: 1px solid;
+	}
+	.navigation ul{}
+	.navigation ul li{
+		display: inline;
+	}
+	.navigation ul li a,
+	.navigation ul li .sub{
+		display: inline-block;
+		margin-top: 10px;
+		height: 30px;
+		width: auto;
+		padding-right: 20px;
+	}
+	.navigation ul li .sub{
+		font-size: 10px;
+		margin-left: -10px;
+	}
+	.navigation ul li .sub::before{
+		content: "+";
+	}
+	.navigation .webVersionText{
+		font-size: 8px;
+	}
+	
+	.dialog,
+	.loadingCard{
+		width: 100%;
+		height: 100%;
+	}
+	.dialog .dialogTitle,
+	.loadingCard .loadingTitle{
+		margin-top: 48%;
+	}
+	.dialog .dialogActionButtons{
+		margin-bottom:120px;
+	}
+	
+	.logoNsearch{
+		width: 100%;
+		display: block;
+		margin-top: 100px;
+		margin-left: 14px;
+	}
+	.logoNsearch .logoText img{
+		margin-left: 26%;
+		width: 50%;
+	}
+	.logoNsearch .logoText p{
+		text-align: center;
+		font-size: 12px;
+	}
+	.logoNsearch .logoSearch{
+		height: 45%;
+	}
+	.logoNsearch .logoSearch input{
+		margin-left: auto;
+		margin-right: auto;
+		width: 200px;
+	}
+	
+	.pageContent{
+		margin-top: 32px;
+		margin-left: 11px;
+		width: auto;
+	}
+	
+	.formContent form div label{
+		font-size: 12px;
+	}
+	.formContent form .form-buttons input,
+	button{
+		width: 27%;
+	}
+	
+	.social-menu-horizontal a{
+		display: block;
+	}
+	
+	.appContent .appNavigation img{
+		width: 90px;
+		height: 90px;
+	}
+	.appContent .appNavigation .appInfo .appName{
+		font-size: 16px;
+	}
+	.appContent .appNavigation .appInfo .appAuthor{
+		font-size: 14px;
+	}
+	
+	.homeContent{
+		margin-top: 72px;
+	}
+	
+	.setupHomeContent .setup-title{
+		font-size: 28pt;
+	}
+}
+/* @media: Tablets-1 - 481x599 */
+@media only screen and (min-width: 481px) and (max-width: 599px){
+	.pageStartLine{
+		border-left: 7px solid;
+	}
+	
+	.navigation{
+		margin-left: 10px;
+		max-width: 140px;
+	}
+	.navigation ul li a{
+		font-size: 10px;
+		width: 82%;
+	}
+	.navigation ul li .sub{
+		padding-left: 20px;
+		font-size: 9px;
+		width: 75%;
+	}
+	.navigation .webVersionText{
+		font-size: 8px;
+	}
+	
+	.logoNsearch{
+		margin-top: 10px;
+		margin-left: 156px;
+	}
+	.logoNsearch .logoText .logo{
+		font-size: 30pt;
+	}
+	.logoNsearch .logoText p{
+		font-size: 10px;
+	}
+	.logoNsearch .logoSearch input{
+		width: 150px;
+	}
+	
+	.pageContent{
+		margin-top: 20px;
+		margin-left: 156px;
+		width: auto;
+	}
+	
+	.formContent form div label{
+		font-size: 12px;
+	}
+	
+	.homeContent .welcome-title{
+		font-size: 38pt;
+	}
+	.homeContent .welcome-title-small{
+		margin-top: 14px;
+		font-size: 9pt;
+	}
+}
+/* @media: Tablets-2 - 600x700 */
+@media only screen and (min-width: 600px) and (max-width: 700px){
+	.logoNsearch .logoText .logo{
+		font-size: 35pt;
+	}
+	.logoNsearch .logoText p{
+		font-size: 12px;
+	}
+	.logoNsearch .logoSearch input{
+		width: 150px;
+	}
+	
+	.navigation ul li a{
+		font-size: 12px;
+	}
+	
+	.formContent form div label{
+		font-size: 13px;
+	}
+}

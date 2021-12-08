@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* Only Colors */
+/* Theme: Dark */
+html,
+body{
+	background-color: #1E1D33;
+	color: #EFEFEF;
+}
+
+.pageStartLine{
+	border-color: #48ADE7;
+}
+
+.navigation{
+	border-color: #4E4E4E;
+}
+
+a{
+	color: #EFEFEF;
+}
+.navigation ul li a:hover,
+.social-menu-horizontal a:hover,
+.social-menu-vertical a:hover{
+	background: rgba(200,200,200,0.3);
+}
+
+.text-theme{
+	color: #48ADE7;
+}
+
+.btn-theme{
+	background-color: #48ADE7;
+}
+.btn-theme:hover{
+	background-color: #7DC3EC;
+}
+.btn-danger{
+	background: #C01B1E;
+}
+.btn-danger:hover{
+	background: #C95052;
+}
+.btn-warning{
+	background-color: #CCA609;
+}
+.btn-warning:hover{
+	background-color: #CBB55D;
+}
+.btn-success{
+	background-color: #0BA805;
+}
+.btn-success:hover{
+	background-color: #59C755;
+}
+
+.announceTitle,
+.announceAuthor,
+.announceDate,
+.errorCodeTitle{
+	color: #48ADE7;
+}
+
+.dialog,
+.loadingCard{
+	background: #141322;
+	/*Chrome, Safari*/
+	-webkit-box-shadow: 3px 8px 8px 1px #0F0F0F;
+	/*Standard Syntax*/
+	box-shadow: 3px 8px 8px 1px #0F0F0F;
+}
+
+/* Elements */
+input,
+button,
+.select select,
+textarea{
+	color: #EFEFEF;
+	background: rgba(200,200,200,0.4);
+}
+
+.select select option{
+	background: #1E1D33;
+}
+.select:hover::after {
+	color: rgba(255, 255, 255, 0.6);
+}
+
+input:hover,
+button:hover,
+.select select:hover,
+textarea:hover{
+	background: rgba(210,210,210,0.6);
+}
+
+table caption {
+	color: #FFFFFF;
+}
+table tr {
+	background: transparent;
+	border-color: #DDDDDD;
+}
+table td {
+	border-color: #DDDDDD;
+}
+table th {
+	color: #48ADE7;
+}
+table td::before{
+	color: #48ADE7;
+}
+
+hr{
+	border-color: #4E4E4E;
+}
+
+/* Properties */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #DFDFDF;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: #DFDFDF;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: #DFDFDF;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: #DFDFDF;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color: #DFDFDF;
+}
+::placeholder { /* Most modern browsers support this now. */
+   color: #DFDFDF;
+}
