@@ -26,29 +26,28 @@ require PATH_DATA."/app.categories.php";
 require PATH_SYSTEM_WEB.'/head.admin.php';
 ?>
     <body>
-        <!-- Loading Card !-->
-		<div class="loadingCard">
-			<p class="loadingTitle text-theme"><?php echo LANG_PLEASE_WAIT; ?> ...</p>
-			<p class="loadingText"><?php echo LANG_LOADING_PAGE; ?> ...</p>
-		</div>
+        <!-- Loading Dialog !-->
+		<?php require PATH_SYSTEM_WEB.'/loading.dialog.php'; ?>
         <!-- Navigation !-->
 		<div class="navigationContainer">
             <?php require PATH_SYSTEM_WEB.'/navigation.admin.php'; ?>
         </div>
         <!-- Custom Dialogs !-->
 		<div id="deleteCategoryDialog" data-link="/admin/apps/categories" data-process="?action=delete&catid=%s" class="dialog">
-			<div class="dialogBody">
-				<p class="dialogTitle text-theme"><?php echo LANG_DELETE_CATEGORY; ?></p>
-				<p class="dialogText"><?php echo LANG_DELETE_CATEGORY_QUESTION; ?></p>
-			</div>
-			<div class="dialogActionButtons">
-                <input type="button" dialog-close="deleteCategoryDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
-				<input type="button" dialog-action="deleteCategoryDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+			<div class="dialogContainer">
+				<div class="dialogBody">
+					<p class="dialogTitle text-theme"><?php echo LANG_DELETE_CATEGORY; ?></p>
+					<p class="dialogText"><?php echo LANG_DELETE_CATEGORY_QUESTION; ?></p>
+				</div>
+				<div class="dialogActionButtons">
+					<input type="button" dialog-close="deleteCategoryDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
+					<input type="button" dialog-action="deleteCategoryDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+				</div>
 			</div>
 		</div>
 		<!-- Page Content !-->
         <div class="pageContent">
-            <div class="adminAnnouncementContent">
+            <div class="adminActionNavigation">
 				<div class="actionButtons">
 					<a href="/admin/apps/categories/new">
 						<input type="button" class="btn-theme" <?php echo 'value="'.LANG_NEW_CATEGORY.'"'; ?>>

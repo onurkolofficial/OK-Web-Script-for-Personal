@@ -22,24 +22,23 @@ require PATH_SYSTEM_WEB.'/head.admin.php';
 require PATH_DATA."/mails.php";
 ?>
     <body>
-        <!-- Loading Card !-->
-		<div class="loadingCard">
-			<p class="loadingTitle text-theme"><?php echo LANG_PLEASE_WAIT; ?> ...</p>
-			<p class="loadingText"><?php echo LANG_LOADING_PAGE; ?> ...</p>
-		</div>
+        <!-- Loading Dialog !-->
+		<?php require PATH_SYSTEM_WEB.'/loading.dialog.php'; ?>
         <!-- Navigation !-->
 		<div class="navigationContainer">
             <?php require PATH_SYSTEM_WEB.'/navigation.admin.php'; ?>
         </div>
         <!-- Custom Dialogs !-->
 		<div id="deleteMailDialog" data-link="/admin/mails" data-process="?action=delete&id=%s" class="dialog">
-			<div class="dialogBody">
-				<p class="dialogTitle text-theme"></p>
-				<p class="dialogText"><?php echo LANG_DELETE_MAIL_QUESTION; ?></p>
-			</div>
-			<div class="dialogActionButtons">
-				<input type="button" dialog-close="deleteMailDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
-				<input type="button" dialog-action="deleteMailDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+			<div class="dialogContainer">
+				<div class="dialogBody">
+					<p class="dialogTitle text-theme"><?php echo LANG_DELETE_MAIL; ?></p>
+					<p class="dialogText"><?php echo LANG_DELETE_MAIL_QUESTION; ?></p>
+				</div>
+				<div class="dialogActionButtons">
+					<input type="button" dialog-close="deleteMailDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
+					<input type="button" dialog-action="deleteMailDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+				</div>
 			</div>
 		</div>
 		<!-- Page Content !-->

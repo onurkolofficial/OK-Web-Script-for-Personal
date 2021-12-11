@@ -1,6 +1,6 @@
             <?php require PATH_DATA."/navigation.pages.php"; ?>
             <div class="navigation">
-				<p class="webVersionText"><?php echo VERSION_CORE; ?></p>
+				<p class="webVersionText"><?php echo VERSION_CORE."-".VERSION_CODE; ?></p>
                 <ul>
                     <?php
                         while($Row=$Query->FetchAssoc($NavigationPageResult)){

@@ -13,8 +13,11 @@ var dialogData;
 function initLoadingCard(){
 	// Click 'a' element
 	$("a").click(function(){
-		if($(this).attr('href')!="#")
-			$(".loadingCard").css("display","block");
+		if($(this).attr('href')!="#"){
+			$($(".dialog")[0]).css("display","flex");
+		}
+		// <FIXED> Hide loading card at short time if clicked download link.
+		setTimeout(function(){$(".loadingCard").css("display","none")},6000);
 	});
 }
 
@@ -50,5 +53,9 @@ function initDialogButtons(){
 		$(".loadingCard").css("display","block");
 		// Redirect
 		window.location.href=dataLink+dataProcess;
+	});
+	// Dialog Dismiss
+	$(".dialog").click(function(){
+		$(this).css("display","none");
 	});
 }

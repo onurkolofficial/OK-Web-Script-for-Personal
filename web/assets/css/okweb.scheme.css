@@ -66,37 +66,48 @@
 	padding: 0;
 }
 
-.dialog,
-.loadingCard{
+.dialog{
+	position: absolute;
+	left:0;
+	height: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999998;
+	display: none;
+}
+.dialog .dialogContainer{
 	text-align: center;
 	position: fixed;
 	top: 50%;
 	left: 50%;
-	width: 380px;
-	height: 140px;
+	min-height: 140px;
+	min-width: 380px;
+	width: auto;
+	height: auto;
 	/* bring your own prefixes */
 	transform: translate(-50%, -50%);
 	z-index: 9999999;
-	display: none;
 }
-.dialog{
+.dialogContainer{
 	/*display: flex;*/
 	flex-direction: column;
 }
-.dialog .dialogBody{
+.dialog .dialogContainer .dialogBody{
 	display: block;
 	margin: auto;
 	height: auto;
 }
-.dialog .dialogTitle, .loadingCard .loadingTitle{
+.dialog .dialogContainer .dialogTitle{
 	font-family: 'Satisfy';
 	font-size: 26pt;
 	margin-top: 24px;
+	word-wrap: break-word;
 }
-.dialog .dialogTitle{
-	margin-top: 5px;
+.dialog .dialogContainer .dialogText{
+	word-wrap: break-word;
+	margin-bottom: 10px;
 }
-.dialog .dialogActionButtons{all:unset;}
+.dialog .dialogContainer .dialogActionButtons{all:unset;}
 
 .logoNsearch{
 	width: 100%;
@@ -154,6 +165,10 @@
 }
 .latestAnnouncement .announceDate{
 	float: right;
+}
+.latestAnnouncement a{
+	display: block;
+	text-decoration: none;
 }
 
 .errorCodeContent{
@@ -499,7 +514,9 @@ table th {
 		border-right: none;
 		border-bottom: 1px solid;
 	}
-	.navigation ul{}
+	.navigation ul{
+		all: unset;
+	}
 	.navigation ul li{
 		display: inline;
 	}
@@ -519,20 +536,22 @@ table th {
 	.navigation ul li .sub::before{
 		content: "+";
 	}
+	/* position: sticky; IE Not SUPPORTED! */
 	.navigation .webVersionText{
+		position: sticky;
+		left: 50%;
+		transform: translateX(-50%);
 		font-size: 8px;
 	}
 	
-	.dialog,
-	.loadingCard{
+	.dialog .dialogContainer{
 		width: 100%;
 		height: 100%;
 	}
-	.dialog .dialogTitle,
-	.loadingCard .loadingTitle{
+	.dialog .dialogContainer .dialogTitle{
 		margin-top: 48%;
 	}
-	.dialog .dialogActionButtons{
+	.dialog .dialogContainer .dialogActionButtons{
 		margin-bottom:120px;
 	}
 	
@@ -633,7 +652,9 @@ table th {
 		border-right: none;
 		border-bottom: 1px solid;
 	}
-	.navigation ul{}
+	.navigation ul{
+		all: unset;
+	}
 	.navigation ul li{
 		display: inline;
 	}
@@ -652,20 +673,22 @@ table th {
 	.navigation ul li .sub::before{
 		content: "+";
 	}
+	/* position: sticky; IE Not SUPPORTED! */
 	.navigation .webVersionText{
+		position: sticky;
+		left: 50%;
+		transform: translateX(-50%);
 		font-size: 8px;
 	}
 	
-	.dialog,
-	.loadingCard{
+	.dialog .dialogContainer{
 		width: 100%;
 		height: 100%;
 	}
-	.dialog .dialogTitle,
-	.loadingCard .loadingTitle{
+	.dialog .dialogContainer .dialogTitle{
 		margin-top: 48%;
 	}
-	.dialog .dialogActionButtons{
+	.dialog .dialogContainer .dialogActionButtons{
 		margin-bottom:120px;
 	}
 	
@@ -722,7 +745,7 @@ table th {
 	}
 	
 	.homeContent{
-		margin-top: 72px;
+		margin-top: 96px;
 	}
 	
 	.setupHomeContent .setup-title{

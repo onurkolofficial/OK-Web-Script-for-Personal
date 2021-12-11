@@ -22,29 +22,28 @@ require PATH_SYSTEM_WEB.'/head.admin.php';
 require PATH_DATA."/navigation.pages.php";
 ?>
     <body>
-        <!-- Loading Card !-->
-		<div class="loadingCard">
-			<p class="loadingTitle text-theme"><?php echo LANG_PLEASE_WAIT; ?> ...</p>
-			<p class="loadingText"><?php echo LANG_LOADING_PAGE; ?> ...</p>
-		</div>
+        <!-- Loading Dialog !-->
+		<?php require PATH_SYSTEM_WEB.'/loading.dialog.php'; ?>
         <!-- Navigation !-->
 		<div class="navigationContainer">
             <?php require PATH_SYSTEM_WEB.'/navigation.admin.php'; ?>
         </div>
         <!-- Custom Dialogs !-->
 		<div id="deletePageDialog" data-link="/admin/pages" data-process="?action=delete&pid=%s" class="dialog">
-			<div class="dialogBody">
-				<p class="dialogTitle text-theme"><?php echo LANG_DELETE_PAGE; ?></p>
-				<p class="dialogText"><?php echo LANG_DELETE_PAGE_QUESTION; ?></p>
-			</div>
-			<div class="dialogActionButtons">
-                <input type="button" dialog-close="deletePageDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
-				<input type="button" dialog-action="deletePageDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+			<div class="dialogContainer">
+				<div class="dialogBody">
+					<p class="dialogTitle text-theme"><?php echo LANG_DELETE_PAGE; ?></p>
+					<p class="dialogText"><?php echo LANG_DELETE_PAGE_QUESTION; ?></p>
+				</div>
+				<div class="dialogActionButtons">
+					<input type="button" dialog-close="deletePageDialog" <?php echo 'value="'.LANG_NO.'"'; ?>>
+					<input type="button" dialog-action="deletePageDialog" class="btn-theme" <?php echo 'value="'.LANG_YES.'"'; ?>>
+				</div>
 			</div>
 		</div>
 		<!-- Page Content !-->
         <div class="pageContent">
-        	<div class="adminAnnouncementContent">
+        	<div class="adminActionNavigation">
 				<div class="actionButtons">
 					<a href="/admin/pages/new">
 						<input type="button" class="btn-theme" <?php echo 'value="'.LANG_NEW_PAGE.'"'; ?>>

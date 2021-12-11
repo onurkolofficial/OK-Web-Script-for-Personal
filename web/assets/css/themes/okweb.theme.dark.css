@@ -53,6 +53,9 @@ a{
 	background-color: #59C755;
 }
 
+.latestAnnouncement a:hover{
+	background: rgba(210,210,210,0.2);
+}
 .announceTitle,
 .announceAuthor,
 .announceDate,
@@ -60,8 +63,7 @@ a{
 	color: #48ADE7;
 }
 
-.dialog,
-.loadingCard{
+.dialogContainer{
 	background: #141322;
 	/*Chrome, Safari*/
 	-webkit-box-shadow: 3px 8px 8px 1px #0F0F0F;

@@ -1,0 +1,5 @@
+@charset "utf-8";
+
+.dialog{
+	backdrop-filter: blur(8px);
+}

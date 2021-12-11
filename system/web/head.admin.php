@@ -11,6 +11,7 @@
 		<link href="/assets/css/okweb.scheme.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/okweb.admin.scheme.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/themes/okweb.theme.dark.css" rel="stylesheet" type="text/css">
+		<link href="/assets/css/okweb.effects.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/okweb.animations.css" rel="stylesheet" type="text/css">
 		<link href="/assets/css/material-icons.css" rel="stylesheet" type="text/css">
 		<!-- Icon !-->

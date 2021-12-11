@@ -31,11 +31,8 @@ if($isLoad=="true"){
 require PATH_SYSTEM_WEB.'/head.admin.php';
 ?>
     <body>
-        <!-- Loading Card !-->
-		<div class="loadingCard">
-			<p class="loadingTitle text-theme"><?php echo LANG_PLEASE_WAIT; ?> ...</p>
-			<p class="loadingText"><?php echo LANG_LOADING_PAGE; ?> ...</p>
-		</div>
+        <!-- Loading Dialog !-->
+		<?php require PATH_SYSTEM_WEB.'/loading.dialog.php'; ?>
         <!-- Navigation !-->
 		<div class="navigationContainer">
             <?php

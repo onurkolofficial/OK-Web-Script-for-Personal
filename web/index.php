@@ -10,11 +10,8 @@ require PATH_SYSTEM_WEB.'/head.php';
 require PATH_DATA."/announcements.php";
 ?>
     <body>
-        <!-- Loading Card !-->
-		<div class="loadingCard">
-			<p class="loadingTitle text-theme"><?php echo LANG_PLEASE_WAIT; ?> ...</p>
-			<p class="loadingText"><?php echo LANG_LOADING_PAGE; ?> ...</p>
-		</div>
+        <!-- Loading Dialog !-->
+		<?php require PATH_SYSTEM_WEB.'/loading.dialog.php'; ?>
         <!-- Navigation !-->
 		<div class="navigationContainer">
             <?php require PATH_SYSTEM_WEB.'/navigation.php'; ?>
@@ -32,12 +29,14 @@ require PATH_DATA."/announcements.php";
                 $LatestAnnouncementRow=$Query->FetchAssoc($AnnouncementsResult);
             ?>
 			<div class="latestAnnouncement">
-				<p class="announceTitle"><?php echo $LatestAnnouncementRow['announcement_name']; ?></p>
-				<div class="announceContent">
-                    <?php echo nl2br($LatestAnnouncementRow['announcement_message_short']); ?>
-				</div>
-				<div class="announceAuthor">Onur Kol</div>
-				<div class="announceDate"><?php echo $LatestAnnouncementRow['release_date']; ?></div>
+				<a <?php echo 'href="/announcements/'.$LatestAnnouncementRow['id'].'"'; ?>>
+					<p class="announceTitle"><?php echo $LatestAnnouncementRow['announcement_name']; ?></p>
+					<div class="announceContent">
+						<?php echo nl2br($LatestAnnouncementRow['announcement_message_short']); ?>
+					</div>
+					<div class="announceAuthor">Onur Kol</div>
+					<div class="announceDate"><?php echo $LatestAnnouncementRow['release_date']; ?></div>
+				</a>
 			</div>
 		</div>
     </body>

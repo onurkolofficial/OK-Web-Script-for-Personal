@@ -1,5 +1,5 @@
             <div class="navigation">
-				<p class="webVersionText"><?php echo VERSION_CORE; ?></p>
+				<p class="webVersionText"><?php echo VERSION_CORE."-".VERSION_CODE; ?></p>
 				<ul>
 					<li>
 						<a href="#">
