@@ -1,6 +1,6 @@
 <?php
 // For Database: app_categories
-$MailsResult=$Query->Query($Server, "SELECT * FROM mails ORDER BY `mails`.`date` DESC");
+$MailsResult=$Query->Query($Server, "SELECT * FROM mails ORDER BY STR_TO_DATE(`date`,'%d/%m/%Y %H:%i:%s') DESC");
 // Set Variables
 $MailsCount=$Query->NumRows($MailsResult);
 
